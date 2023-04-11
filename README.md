@@ -54,7 +54,7 @@ Below are example tables for random functions taken from the initial dataset's p
 | 3 |             main |                                              main |    ():\n argument_spec = dict(group=dict(requi... |
 | 4 |      set_shuffle |                                       set_shuffle |    (self, shuffle):\n 'Enable/disable shuffle ... |
 | 5 |      InferError7 |                                     yield_error_7 |       (a, out):\n\n @instance\n def logic():\n... |
-| 6 |    \_\_\init\_\_ |                                         set_ports | (self, repo_manager_exe, server_port=0, direct... |
+| 6 |     \_\_init\_\_ |                                         set_ports | (self, repo_manager_exe, server_port=0, direct... |
 | 7 |         on_close |                                          on_close |    (self):\n print('Listen.on_close', os.getpi... |
 | 8 |      _get_normal |                                         getNormal |           (self, pts):\n '\n Get normal vector... |
 | 9 |      sys_wrapper |                         _setup_sriov_capabilities | (sriovs, vnic_capable=True, vnic_failover_capa... |
