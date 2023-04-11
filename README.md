@@ -17,7 +17,7 @@ RoBERTa-based [CodeBERT by Microsoft](https://huggingface.co/microsoft/codebert-
 
 Training data was split in two halves, with the first one labelled 0 (correct class) and the latter one getting fuction names replaced with random, non-coinciding permutation of names from the entire dataset and labelled 1 (incorrect class).
 
-codebert-base checkpoint was fine-tuned on 80k python functions for 5 epochs. Model was [trained](https://github.com/stas1f1/techdebt-project/blob/main/scorer/scorer_training.ipynb) for 3,5 hours on Tesla A100 GPU and able to reach 0.96 F1-score on validation dataset.
+codebert-base checkpoint was fine-tuned on 80k python functions for 5 epochs. Model was [trained](https://github.com/stas1f1/techdebt-project/blob/main/scorer/scorer_training.ipynb) for 3,5 hours on Tesla V100 GPU and able to reach 0.96 F1-score on validation dataset.
 
 <p align="center">
   <img src="https://github.com/stas1f1/techdebt-project/blob/main/images/codeBert_training_loss.png" width="400" title="hover text">
@@ -33,7 +33,7 @@ When given the task of detecting function names with few (1-3) typos in them acr
 
 T5-based [CodeT5-base for Code Summarization by Salesforce](https://huggingface.co/Salesforce/codet5-base-multi-sum) was chosen for fine-tuning for the function name generator objective. The original checpoint is trained for summarizing code in natural language, so the hypothesis posed was that generating function name is a neighboring task, thus will be easily learned by the model. Conditional Generation head was used with variable definition and code body as input and function name as target, both finished with a separator token.
 
-codet5-base-multi-sum checkpoint was fine-tuned on 80k python functions for 2 epochs. Model was [trained](https://github.com/stas1f1/techdebt-project/blob/main/generator/generator_training.ipynb) for 9,5 hours on Tesla A100 GPU.
+codet5-base-multi-sum checkpoint was fine-tuned on 80k python functions for 2 epochs. Model was [trained](https://github.com/stas1f1/techdebt-project/blob/main/generator/generator_training.ipynb) for 9,5 hours on Tesla V100 GPU.
 
 <p align="center">
   <img src="https://github.com/stas1f1/techdebt-project/blob/main/images/t5_training_loss.png" width="400" title="hover text">
