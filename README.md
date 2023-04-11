@@ -4,7 +4,7 @@ A project that utilizes fine-tuning of CodeBERT and CodeT5 to detect bad functio
 
 ## Data
 
-Both models were trained on dataset of [pyton code data from github](https://huggingface.co/datasets/codeparrot/github-code).
+Both models were trained on dataset of [code data from github](https://huggingface.co/datasets/codeparrot/github-code), from which only python files were extracted.
 File data was processed with ast library, extracting function definition and body nodes outside and inside classes.
 
 For simplicity, in-class functions (like \_\_getitem\_\_) were ignored, as well as functions with decorators. For training, the functions that do not fit in 512 token window when tokenized by RoBERTa's BPE tokenizer were omited.
@@ -13,7 +13,7 @@ First 100k functions of the resulting dataset were used to train and validate bo
 
 ## Scorer model
 
-RoBERTa-based [CodeBERT by Microsoft](https://huggingface.co/microsoft/codebert-base) was chosen for fine-tuning for the function name quality scorer objective. While it would be logical to formulate the task in NSP format, with input like [name]<SEP>[code] with token_type_ids, RoBERTa-based models are not pre-trained for the NSP task, thus do not account for token types. Therefore, the task was formulated as sequence classification, with input having the same format as suggested earlier, except for using RoBERTa's </s> separator counterpart and omitting token types altogether.
+RoBERTa-based [CodeBERT by Microsoft](https://huggingface.co/microsoft/codebert-base) was chosen for fine-tuning for the function name quality scorer objective. While it would be logical to formulate the task in NSP format, with input like [name]<SEP>[code] with token_type_ids, RoBERTa-based models are not pre-trained for the NSP task, thus do not account for token types. Therefore, the task was formulated as sequence classification with corresponding head used on model and input having the same format as suggested earlier, except for using RoBERTa's </s> separator counterpart and omitting token types altogether.
 
 Training data was split in two halves, with the first one labelled 0 (correct class) and the latter one getting fuction names replaced with random, non-coinciding permutation of names from the entire dataset and labelled 1 (incorrect class).
 
@@ -38,9 +38,9 @@ codet5-base-multi-sum checkpoint was fine-tuned on 80k python functions for 2 ep
   <img src="https://github.com/stas1f1/techdebt-project/blob/main/images/t5_validation_loss.png" width="400" title="hover text">
 </p>
 
-Generator model was able to understand simple algorithmic functions like prime number check and fibonacci sequence, however did not do so well in determining exact geometry task or the function being visualized through pyplot.
+Generator model [was able to](https://github.com/stas1f1/techdebt-project/blob/main/generator/generator_testing.ipynb) understand simple algorithmic functions like prime number check and fibonacci sequence, however did not do so well in determining exact geometry task or the function being visualized through pyplot.
 
-Below are example tables for random functions taken from the initial dataset's part not used in training, sampled by short, medium and long-length names
+Below are example tables for random functions taken from the initial dataset's part not used in training, sampled by short, medium and long-length names.
 
 ### Short-length function regeneration examples
 
