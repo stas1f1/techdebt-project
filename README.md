@@ -5,7 +5,7 @@ A project that utilizes fine-tuning of CodeBERT and CodeT5 to detect bad functio
 ## Data
 
 Both models were trained on dataset of [code data from github](https://huggingface.co/datasets/codeparrot/github-code), from which only python files were extracted.
-File data was processed with ast library, extracting function definition and body nodes outside and inside classes.
+File data was processed with ast library, utilizing syntax tree to extract function definition and body nodes outside and inside classes.
 
 For simplicity, in-class functions (like \_\_getitem\_\_) were ignored, as well as functions with decorators. For training, the functions that do not fit in 512 token window when tokenized by RoBERTa's BPE tokenizer were omited.
 
