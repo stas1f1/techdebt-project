@@ -25,13 +25,13 @@ codebert-base checkpoint was fine-tuned on 80k python functions for 5 epochs. Mo
   <img src="https://github.com/stas1f1/techdebt-project/blob/main/images/codeBert_validation_f1.png" width="450" title="hover text">
 </p>
 
-Model was able to easily detect all of the correct and shuffled function name in simple [test example](https://github.com/stas1f1/techdebt-project/blob/main/scorer/scorer_testing.ipynb) of real-life [code file](https://github.com/stas1f1/techdebt-project/blob/main/code_sample/code_sample_halfmashed.py).
+Model was able to easily detect all of the correct and shuffled function names in simple [test example](https://github.com/stas1f1/techdebt-project/blob/main/scorer/scorer_testing.ipynb) of real-life [code file](https://github.com/stas1f1/techdebt-project/blob/main/code_sample/code_sample_halfmashed.py).
 
 When given the task of detecting function names with few (1-3) typos in them across large corpus, the model did not perform as good with only 0.66 accuracy across both classes (balanced).
 
 ## Generator model
 
-T5-based [CodeT5-base for Code Summarization by Salesforce](https://huggingface.co/Salesforce/codet5-base-multi-sum) was chosen for fine-tuning for the function name generator objective. The original checpoint is trained for summarizing code in natural language, so the hypothesis posed was that generating function name is a neighboring task, thus will be easily learned by the model. Conditional Generation head was used with variable definition and code body as input and function name as target, both finished with a separator token.
+T5-based [CodeT5-base for Code Summarization by Salesforce](https://huggingface.co/Salesforce/codet5-base-multi-sum) was chosen for fine-tuning for the function name generator objective. The original checkpoint is trained for summarizing code in natural language, so the hypothesis posed was that generating function name is a neighboring task, thus will be easily learned by the model. Conditional Generation head was used with variable definition and code body as input and function name as target, both finished with a separator token.
 
 codet5-base-multi-sum checkpoint was fine-tuned on 80k python functions for 2 epochs. Model was [trained](https://github.com/stas1f1/techdebt-project/blob/main/generator/generator_training.ipynb) for 9,5 hours on Tesla V100 GPU.
 
