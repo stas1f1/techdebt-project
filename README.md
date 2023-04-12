@@ -13,7 +13,7 @@ First 100k functions of the resulting dataset were used to train and validate bo
 
 ## Scorer model
 
-RoBERTa-based [CodeBERT by Microsoft](https://huggingface.co/microsoft/codebert-base) was chosen for fine-tuning for the function name quality scorer objective. While it would be logical to formulate the task in NSP format, with input like [name]\<SEP\>[code] with token_type_ids, RoBERTa-based models are not pre-trained for the NSP task, thus do not account for token types. Therefore, the task was formulated as sequence classification with corresponding head used on model and input having the same format as suggested earlier, except for using RoBERTa's </s> separator counterpart and omitting token types altogether.
+RoBERTa-based [CodeBERT by Microsoft](https://huggingface.co/microsoft/codebert-base) was chosen for fine-tuning for the function name quality scorer objective. While it would be logical to formulate the task in NSP format, with input like [name]\<SEP\>[code] with token_type_ids, RoBERTa-based models are not pre-trained for the NSP task, thus do not account for token types. Therefore, the task was formulated as sequence classification with corresponding head used on model and input having the same format as suggested earlier, except for using RoBERTa's \<\/s\> separator counterpart and omitting token types altogether.
 
 Training data was split in two halves, with the first one labelled 0 (correct class) and the latter one getting fuction names replaced with random, non-coinciding permutation of names from the entire dataset and labelled 1 (incorrect class).
 
