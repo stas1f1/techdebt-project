@@ -42,7 +42,7 @@ codet5-base-multi-sum checkpoint was fine-tuned on 80k python functions for 2 ep
 
 Generator model [was able to](https://github.com/stas1f1/techdebt-project/blob/main/generator/generator_testing.ipynb) understand simple algorithmic functions like prime number check and fibonacci sequence, however did not do so well in determining exact geometry task or the function being visualized through pyplot.
 
-Below are example tables for random functions taken from the initial dataset's part not used in training, sampled by short, medium and long-length names.
+Below are example tables for random functions taken from the initial dataset's part, which was not used in training. They were separately sampled by short, medium and long-length names.
 
 ### Short-length function regeneration examples
 
