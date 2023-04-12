@@ -77,15 +77,15 @@ Below are example tables for random functions taken from the initial dataset's p
 
 ### Long-length function regeneration examples
 
-|   |                         **functionGeneratedName** |                                  **functionCode** |                                  **functionCode** |
+|   |                                  **functionCode** |                         **functionGeneratedName** |                                  **functionCode** |
 |--:|--------------------------------------------------:|--------------------------------------------------:|--------------------------------------------------:|
 | 0 |      test_wait_for_drive_state_transition_timeout |      test_wait_for_drive_state_transition_timeout |    (self):\n drive = self.driver.ex_list_user_... |
-| 1 |           test_post_name_pattern_none_returns_400 |                                     test_bad_name |    (self):\n response = self.client.PxST('/for... |
-| 2 |                 submit_rescore_one_student_answer |                submit_rescore_problem_for_student | (self, instructor, problem_url_name, student, ... |
-| 3 |          test_encode_one_line_eol_after_non_ascii |                              test_encode_utf8_eol |    (self):\n self._test_encode('helloυ\n'.enco... |
-| 4 |             testSegmentsMultipleStartOverlapAllow |                        testExpandMultipleSegments |                  (self):\n '\n Using start\n T... |
-| 5 | test_multiple_splittable_leading_char_followed... | test_header_with_maxlinelen_and_thus_should_be... |       (self):\n eq = self.ndiffAssertEqual\n h... |
-| 6 |                   testStrandsMissingAsNegativeEnd |                           testIgnoreMissingStrand |           (self):\n '\n Using strand, at end. ... |
-| 7 |                test_splitting_multiple_long_lines |                       test_header_continuation_ws |       (self):\n eq = self.ndiffAssertEqual\n h... |
-| 8 |   test_rfc2231_no_language_or_charset_in_boundary |                 test_message_from_string_boundary |    (self):\n m = 'Content-Type: multipart/alte... |
+| 1 |                                     test_bad_name |           test_post_name_pattern_none_returns_400 |    (self):\n response = self.client.PxST('/for... |
+| 2 |                submit_rescore_problem_for_student |                 submit_rescore_one_student_answer | (self, instructor, problem_url_name, student, ... |
+| 3 |                              test_encode_utf8_eol |          test_encode_one_line_eol_after_non_ascii |    (self):\n self._test_encode('helloυ\n'.enco... |
+| 4 |                        testExpandMultipleSegments |             testSegmentsMultipleStartOverlapAllow |                  (self):\n '\n Using start\n T... |
+| 5 | test_header_with_maxlinelen_and_thus_should_be... | test_multiple_splittable_leading_char_followed... |       (self):\n eq = self.ndiffAssertEqual\n h... |
+| 6 |                           testIgnoreMissingStrand |                   testStrandsMissingAsNegativeEnd |           (self):\n '\n Using strand, at end. ... |
+| 7 |                       test_header_continuation_ws |                test_splitting_multiple_long_lines |       (self):\n eq = self.ndiffAssertEqual\n h... |
+| 8 |                 test_message_from_string_boundary |   test_rfc2231_no_language_or_charset_in_boundary |    (self):\n m = 'Content-Type: multipart/alte... |
 | 9 |        testGenerateFeatureSplitCandidatesInactive |        testGenerateFeatureSplitCandidatesInactive |    (self):\n with self.cached_session() as ses... |
