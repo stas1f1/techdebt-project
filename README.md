@@ -25,7 +25,7 @@ codebert-base checkpoint was fine-tuned on 80k python functions for 5 epochs. Mo
   <img src="https://github.com/stas1f1/techdebt-project/blob/main/images/codeBert_validation_f1.png" width="450" title="hover text">
 </p>
 
-Model was able to easily detect all of the correct and shuffled function names in simple [test example](https://github.com/stas1f1/techdebt-project/blob/main/scorer/scorer_testing.ipynb) of real-life [code file](https://github.com/stas1f1/techdebt-project/blob/main/code_sample/code_sample_halfmashed.py).
+Model [was able](https://github.com/stas1f1/techdebt-project/blob/main/scorer/scorer_testing.ipynb) to easily detect all of the correct and shuffled function names in simple  test example of real-life [code file](https://github.com/stas1f1/techdebt-project/blob/main/code_sample/code_sample_halfmashed.py).
 
 When given the task of detecting function names with few (1-3) typos in them across large corpus, the model did not perform as good with only 0.66 accuracy across both classes (balanced).
 
